@@ -4,8 +4,10 @@
     dir="{{ in_array(app()->getLocale(), ['ar', 'fa', 'he']) ? 'rtl' : 'ltr' }}"
 >
     <head>
+        <!-- عنوان صفحه نصب -->
         <title>@lang('installer::app.installer.index.title')</title>
 
+        <!-- تنظیمات متا برای پشتیبانی از زبان و نمایش صحیح در مرورگر -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,10 +15,12 @@
 
         @stack('meta')
 
+        <!-- بارگذاری فایل‌های CSS و JS با استفاده از Vite -->
         {{
             vite()->set(['src/Resources/assets/css/app.css', 'src/Resources/assets/js/app.js'], 'installer')
         }}
 
+        <!-- فونت‌های استفاده شده در صفحه -->
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
             rel="stylesheet"
@@ -27,6 +31,7 @@
             rel="stylesheet"
         />
 
+        <!-- آیکون میانبر برای صفحه -->
         <link
             type="image/x-icon"
             href="{{ vite()->asset('images/favicon.ico', 'installer') }}"

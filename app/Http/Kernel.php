@@ -9,39 +9,58 @@ class Kernel extends HttpKernel
     /**
      * پشته میان‌افزارهای HTTP جهانی برنامه.
      *
-     * این میان‌افزارها در طول هر درخواست به برنامه اجرا می‌شوند.
+     * این آرایه شامل لیستی از میان‌افزارها است که در طول هر درخواست به برنامه اجرا می‌شوند.
      *
      * @var array
      */
     protected $middleware = [
+        // این میان‌افزار برای اعتماد به میزبان‌ها استفاده می‌شود.
         // \App\Http\Middleware\TrustHosts::class,
+
+        // این میان‌افزار برای اعتماد به پروکسی‌ها استفاده می‌شود.
         \App\Http\Middleware\TrustProxies::class,
+
+        // این میان‌افزار برای مدیریت درخواست‌های CORS استفاده می‌شود.
         \Illuminate\Http\Middleware\HandleCors::class,
+
+        // این میان‌افزار برای جلوگیری از درخواست‌ها در زمان نگهداری استفاده می‌شود.
         \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
+
+        // این میان‌افزار برای اعتبارسنجی اندازه پست‌ها استفاده می‌شود.
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+
+        // این میان‌افزار برای حذف فضای خالی از رشته‌ها استفاده می‌شود.
         \App\Http\Middleware\TrimStrings::class,
+
+        // این میان‌افزار برای نصب برنامه استفاده می‌شود.
         \Webkul\Installer\Http\Middleware\CanInstall::class,
     ];
 
     /**
      * گروه‌های میان‌افزارهای مسیریابی برنامه.
      *
+     * این آرایه شامل گروه‌هایی از میان‌افزارها است که برای مسیریابی استفاده می‌شوند.
+     *
      * @var array
      */
     protected $middlewareGroups = [
         'web' => [
+            // این میان‌افزار برای رمزگذاری کوکی‌ها استفاده می‌شود.
             \App\Http\Middleware\EncryptCookies::class,
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-            \Illuminate\Session\Middleware\StartSession::class,
-            // \Illuminate\Session\Middleware\AuthenticateSession::class,
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class,
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        ],
 
-        'api' => [
-            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            'throttle:api',
+            // این میان‌افزار برای افزودن کوکی‌های صف به پاسخ استفاده می‌شود.
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+
+            // این میان‌افزار برای شروع جلسه استفاده می‌شود.
+            \Illuminate\Session\Middleware\StartSession::class,
+
+            // این میان‌افزار برای اشتراک‌گذاری خطاها از جلسه استفاده می‌شود.
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+
+            // این میان‌افزار برای اعتبارسنجی توکن CSRF استفاده می‌شود.
+            \App\Http\Middleware\VerifyCsrfToken::class,
+
+            // این میان‌افزار برای جایگزینی بایندینگ‌ها استفاده می‌شود.
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];

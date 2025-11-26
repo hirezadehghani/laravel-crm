@@ -1,5 +1,5 @@
 <x-admin::layouts>
-    <!-- Page Title -->
+    <!-- عنوان صفحه -->
     <x-slot:title>
         @lang('admin::app.settings.pipelines.index.title')
     </x-slot>
@@ -9,13 +9,13 @@
             <div class="flex flex-col gap-2">
                 {!! view_render_event('admin.settings.pipelines.index.breadcrumbs.before') !!}
 
-                <!-- Breadcrumbs -->
+                <!-- مسیرها -->
                 <x-admin::breadcrumbs name="settings.pipelines" />
 
                 {!! view_render_event('admin.settings.pipelines.index.breadcrumbs.after') !!}
 
                 <div class="text-xl font-bold dark:text-white">
-                    <!-- Title -->
+                    <!-- عنوان -->
                     @lang('admin::app.settings.pipelines.index.title')
                 </div>
             </div>
@@ -25,7 +25,7 @@
                     {!! view_render_event('admin.settings.pipelines.index.create_button.before') !!}
                     
                     @if (bouncer()->hasPermission('settings.lead.pipelines.create'))
-                        <!-- Create button Pipelines -->
+                        <!-- دکمه ایجاد خطوط فروش -->
                         <a
                             href="{{ route('admin.settings.pipelines.create') }}"
                             class="primary-button"

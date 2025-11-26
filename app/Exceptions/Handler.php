@@ -7,24 +7,18 @@ use Throwable;
 
 class Handler extends ExceptionHandler
 {
-    /**
-     * لیستی از ورودی‌هایی که برای استثناهای اعتبارسنجی هرگز ذخیره نمی‌شوند.
-     *
-     * @var array<int, string>
-     */
+    // این آرایه شامل ورودی‌هایی است که برای استثناهای اعتبارسنجی ذخیره نمی‌شوند.
     protected $dontFlash = [
         'current_password',
         'password',
         'password_confirmation',
     ];
 
-    /**
-     * ثبت بازخوردهای مدیریت استثناها برای برنامه.
-     */
+    // این متد برای ثبت بازخوردهای مدیریت استثناها استفاده می‌شود.
     public function register(): void
     {
         $this->reportable(function (Throwable $e) {
-            //
+            // اینجا می‌توانید کد مدیریت استثناها را اضافه کنید.
         });
     }
 }
