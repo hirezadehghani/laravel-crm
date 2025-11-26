@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * ثبت هرگونه سرویس برنامه.
      *
      * @return void
      */
@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * راه‌اندازی هرگونه سرویس برنامه.
      *
      * @return void
      */

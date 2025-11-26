@@ -11,7 +11,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * ویژگی‌هایی که به صورت انبوه قابل تخصیص هستند.
      *
      * @var array
      */
@@ -22,7 +22,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * ویژگی‌هایی که باید برای آرایه‌ها مخفی شوند.
      *
      * @var array
      */
@@ -32,7 +32,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * ویژگی‌هایی که باید به انواع اصلی تبدیل شوند.
      *
      * @var array
      */

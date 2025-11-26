@@ -8,7 +8,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 class Kernel extends ConsoleKernel
 {
     /**
-     * Define the application's command schedule.
+     * تعریف زمان‌بندی دستورات برنامه.
      */
     protected function schedule(Schedule $schedule): void
     {
@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
     }
 
     /**
-     * Register the commands for the application.
+     * ثبت دستورات برای برنامه.
      */
     protected function commands(): void
     {

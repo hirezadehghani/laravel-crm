@@ -8,7 +8,7 @@ use Throwable;
 class Handler extends ExceptionHandler
 {
     /**
-     * A list of the inputs that are never flashed for validation exceptions.
+     * لیستی از ورودی‌هایی که برای استثناهای اعتبارسنجی هرگز ذخیره نمی‌شوند.
      *
      * @var array<int, string>
      */
@@ -19,7 +19,7 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Register the exception handling callbacks for the application.
+     * ثبت بازخوردهای مدیریت استثناها برای برنامه.
      */
     public function register(): void
     {
